@@ -23,10 +23,12 @@ const mint = generateSigner(umi);
             name: "Rugoons",
             symbol: "RGN",
             uri: "https://devnet.irys.xyz/Go5UVNAjJEMK6KUYNYpqF5Gi2q5V2z1VP8wW5LxEYzZy",
-            sellerFeeBasisPoints: percentAmount(0.6)
-        }
+            sellerFeeBasisPoints: percentAmount(0.6),
+        },
     )
     let result = await tx.sendAndConfirm(umi);
+
+    
     const signature = base58.encode(result.signature);
     
     // console.log(`Succesfully Minted! Check out your TX here:\nhttps://explorer.solana.com/tx/${signature}?cluster=devnet`)
